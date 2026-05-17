@@ -1,12 +1,13 @@
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL ||
+  "https://bug-tracker-project.onrender.com/api";
+
 const apiRequest = async (endpoint, method = "GET", body = null) => {
   // Prevent API calls during server-side rendering
   if (typeof window === "undefined") {
     throw new Error("API calls are not supported during server-side rendering");
   }
 
-  console.log(`Making ${method} request to ${BASE_URL}${endpoint}`, body);
-  
   try {
     const token = localStorage.getItem("authToken");
 
