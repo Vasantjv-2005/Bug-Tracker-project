@@ -44,19 +44,19 @@ const apiRequest = async (endpoint, method = "GET", body = null) => {
 };
 
 export const api = {
-  register: (data) => apiRequest("/auth/register", "POST", data),
-  login: (data) => apiRequest("/auth/login", "POST", data),
-  getCurrentUser: () => apiRequest("/auth/me"),
-  createProject: (data) => apiRequest("/projects", "POST", data),
-  getProjects: () => apiRequest("/projects"),
-  getProject: (id) => apiRequest(`/projects/${id}`),
-  createIssue: (data) => apiRequest("/issues", "POST", data),
-  getIssues: (projectId) => apiRequest(`/issues?projectId=${projectId}`),
-  getIssue: (id) => apiRequest(`/issues/${id}`),
-  updateIssue: (id, data) => apiRequest(`/issues/${id}`, "PUT", data),
-  createComment: (data) => apiRequest("/comments", "POST", data),
-  getComments: (issueId) => apiRequest(`/comments/${issueId}`),
-  getComment: (id) => apiRequest(`/comments/${id}`),
+  register: (data) => apiRequest("/api/auth/register", "POST", data),
+  login: (data) => apiRequest("/api/auth/login", "POST", data),
+  getCurrentUser: () => apiRequest("/api/auth/me"),
+  createProject: (data) => apiRequest("/api/projects", "POST", data),
+  getProjects: () => apiRequest("/api/projects"),
+  getProject: (id) => apiRequest(`/api/projects/${id}`),
+  createIssue: (data) => apiRequest("/api/issues", "POST", data),
+  getIssues: (projectId) => apiRequest(`/api/issues?projectId=${projectId}`),
+  getIssue: (id) => apiRequest(`/api/issues/${id}`),
+  updateIssue: (id, data) => apiRequest(`/api/issues/${id}`, "PUT", data),
+  createComment: (data) => apiRequest("/api/comments", "POST", data),
+  getComments: (issueId) => apiRequest(`/api/comments/${issueId}`),
+  getComment: (id) => apiRequest(`/api/comments/${id}`),
 };
 
 export default api;
