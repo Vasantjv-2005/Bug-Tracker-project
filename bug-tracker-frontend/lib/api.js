@@ -1,6 +1,6 @@
 const BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL ||
-  "https://bug-tracker-project.onrender.com/api";
+  process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/+$/, "") ||
+  "https://bug-tracker-project-6.onrender.com";
 
 const apiRequest = async (endpoint, method = "GET", body = null) => {
   // Prevent API calls during server-side rendering
